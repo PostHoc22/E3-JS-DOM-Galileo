@@ -53,6 +53,11 @@ const $input = document.querySelector("#number");
 const $boton = document.querySelector(".submit");
 
 const $card = document.querySelector(".card");
+$card.style.visibility = "hidden";
+
+// const localStorage = () => {
+//   JSON.parse(localStorage.getItem("ultimaPizza"));
+// };
 
 const templatePizza = (pizza) => {
   return `
@@ -68,9 +73,11 @@ const renderPizza = (numero) => {
   let buscarPizza = pizzas.find((pizza) => pizza.id === pizzaID);
   if (buscarPizza) {
     $card.innerHTML = templatePizza(buscarPizza);
+    $card.style.visibility = "visible";
     localStorage.setItem("ultimaPizza", JSON.stringify(buscarPizza));
   } else {
     $card.innerHTML = `<p> No se encontro ninguna variedad de pizza con el Valor ingresado. Por favor, intente nuevamente pero esta vez ingresando otro valor. </p>`;
+    $card.style.visibility = "visible";
     localStorage.removeItem("ultimaPizza");
   }
 };
@@ -84,5 +91,12 @@ const submitPizza = (e) => {
 
 const init = () => {
   $form.addEventListener("submit", submitPizza);
+
+  // Verificar si hay una pizza en el LocalStorage y renderizarla al cargar la página
+  const ultimaPizzaGuardada = JSON.parse(localStorage.getItem("ultimaPizza"));
+  if (ultimaPizzaGuardada) {
+    renderPizza(ultimaPizzaGuardada.id);
+    $card.style.visibility = "visible";
+  }
 };
 init();

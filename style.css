@@ -114,7 +114,7 @@ input {
 .card {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 30%;
   padding: 1rem;
   justify-content: center;
   align-items: center;
@@ -127,4 +127,39 @@ input {
   height: 10rem;
   width: 15rem;
   border-radius: 1rem;
+}
+
+/* Hacer el contenedor de la tarjeta más ancho en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+
+/* Alinear el botón al centro en pantallas pequeñas */
+@media screen and (max-width: 576px) {
+  .form {
+    flex-direction: column;
+    justify-items: center;
+  }
+
+  .submit {
+    margin-top: 1rem;
+    align-items: center;
+  }
+}
+
+/* Cambiar el tamaño de la fuente del título en pantallas pequeñas */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Hacer el logotipo más pequeño en pantallas pequeñas */
+@media screen and (max-width: 360px) {
+  .logo {
+    height: 4rem;
+    width: 7rem;
+  }
 }

@@ -120,13 +120,20 @@ input {
   align-items: center;
   gap: 1rem;
   border-radius: 2rem;
-  border: solid black;
+  box-shadow: 1px 1px 12px rgb(99, 96, 96);
 }
 
 .img {
   height: 10rem;
   width: 15rem;
   border-radius: 1rem;
+}
+
+.error {
+  color: tomato;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 /* Hacer el contenedor de la tarjeta más ancho en pantallas pequeñas */

@@ -76,7 +76,7 @@ const renderPizza = (numero) => {
     $card.style.visibility = "visible";
     localStorage.setItem("ultimaPizza", JSON.stringify(buscarPizza));
   } else {
-    $card.innerHTML = `<p> No se encontro ninguna variedad de pizza con el Valor ingresado. Por favor, intente nuevamente pero esta vez ingresando otro valor. </p>`;
+    $card.innerHTML = `<p class="error"> No se encontro ninguna variedad de pizza con el Valor ingresado. Por favor, intente nuevamente pero esta vez ingresando otro valor.</p>`;
     $card.style.visibility = "visible";
     localStorage.removeItem("ultimaPizza");
   }
